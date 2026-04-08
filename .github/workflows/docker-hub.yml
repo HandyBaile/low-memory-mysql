@@ -27,6 +27,7 @@ jobs:
       uses: docker/build-push-action@v7.0.0
       with:
           context: .
+          platforms: linux/amd64,linux/arm64 
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/lowmem-mysql:${{ matrix.mysql_version }}
