@@ -2,6 +2,10 @@ name: Docker Hub CI
 on:
   push:
     branches: [ "master" ]
+    paths:
+      - 'Dockerfile'
+      - '.github/workflows/**'
+      - 'lowmem.cnf'
   pull_request:
     branches: [ "master" ]
   schedule:
@@ -29,7 +33,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Build and push Image
+    - name: Build & Push Docker Images
       uses: docker/build-push-action@v7.0.0
       with:
           context: .
@@ -39,3 +43,7 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/lowmem-mysql:${{ matrix.mysql_version }}
           build-args: |
             MYSQL_VERSION=${{ matrix.mysql_version }}
+          provenance: true
+          sbom: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
