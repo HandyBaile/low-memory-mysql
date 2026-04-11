@@ -3,7 +3,7 @@
 # LowMem MySQL
 
 - Github: https://github.com/HandyBaile/lowmem-mysql
-- Docker Hub: https://hub.docker.com/repository/docker/handybaile/lowmem-mysql *Built twice a week*
+- Docker Hub: https://hub.docker.com/r/handybaile/lowmem-mysql *Built twice a week*
 
 LowMem MySQL is a drop in replacement for the `mysql` Docker Image, that defines a `Dockerfile` which adds a config file that decreases memory usage in the MySQL `conf.d` directory.
 
