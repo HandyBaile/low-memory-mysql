@@ -23,4 +23,4 @@ innodb_sort_buffer_size=64K
 binlog_cache_size=4K
 binlog_stmt_cache_size=4K
 
-performance_schema = off
+performance_schema=off

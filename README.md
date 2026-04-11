@@ -1,7 +1,11 @@
-# Low memory MySQL
+- Based of [**alexanderkoller**](https://github.com/alexanderkoller)'s [**low-memory-mysql**](https://github.com/alexanderkoller/low-memory-mysql)
 
-MySQL is great, but with its default settings, it uses a lot of memory. This can be a problem when deploying it in a low-memory environment, such as a virtual server or a Docker container server.
+# LowMem MySQL
 
-This project defines a Dockerfile which replaces the config file of the default MySQL Docker image with one which uses less memory. These modifications come from the following sources:
+- Github: https://github.com/HandyBaile/lowmem-mysql
+- Docker Hub: https://hub.docker.com/repository/docker/handybaile/lowmem-mysql *Built twice a week*
 
- * http://www.tocker.ca/2014/03/10/configuring-mysql-to-use-minimal-memory.html
+LowMem MySQL is a drop in replacement for the `mysql` Docker Image, that defines a `Dockerfile` which adds a config file that uses decreases memory using in the MySQL `conf.d` directory.
+
+These modifications come from the following source:
+- http://www.tocker.ca/2014/03/10/configuring-mysql-to-use-minimal-memory.html
